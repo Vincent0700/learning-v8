@@ -69,7 +69,7 @@ check: # check & install deps
 	fi
 
 run:
-	@$(clean)
+	@make clean
 	@echo -e "\n$(BEGIN_HL) INFO $(END_HL) build & run src/main.cc"
 	@echo "$(YELLOW)-----------------------------------------$(RESET)"
 	@$(call build, src/main.cc, dist/main)
