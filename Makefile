@@ -13,7 +13,7 @@ V8_INCLUDE  := $(V8_CUR_DIR)/include
 V8_LIBRARY  := $(V8_CUR_DIR)/lib/$(PLATFORM)
 
 # define standard colors
-BLACK.      := $(shell tput -Txterm setaf 0)
+BLACK       := $(shell tput -Txterm setaf 0)
 RED         := $(shell tput -Txterm setaf 1)
 GREEN       := $(shell tput -Txterm setaf 2)
 YELLOW      := $(shell tput -Txterm setaf 3)
@@ -21,33 +21,33 @@ LIGHTPURPLE := $(shell tput -Txterm setaf 4)
 PURPLE      := $(shell tput -Txterm setaf 5)
 BLUE        := $(shell tput -Txterm setaf 6)
 WHITE       := $(shell tput -Txterm setaf 7)
-RESET 			:= $(shell tput -Txterm sgr0)
-BEGIN_HL		:= \033[42;30m
-END_HL			:= \033[0m
+RESET       := $(shell tput -Txterm sgr0)
+BEGIN_HL    := \033[42;30m
+END_HL      := \033[0m
 
 # install v8 libs
 define install_deps
-	cd $(V8_DIR)
-	wget $(V8_URL)
-	tar xzvf $(V8_VERSION).tar.gz
-	rm -rf $(V8_VERSION).tar.gz
+  cd $(V8_DIR)
+  wget $(V8_URL)
+  tar xzvf $(V8_VERSION).tar.gz
+  rm -rf $(V8_VERSION).tar.gz
 endef
 
 # build with v8
 define build
-	clang++ $(1) -o $(2) \
-		-I$(V8_INCLUDE) \
-		-L$(V8_LIBRARY) -lv8_monolith \
-		-std=c++11
+  clang++ $(1) -o $(2) \
+    -I$(V8_INCLUDE) \
+    -L$(V8_LIBRARY) -lv8_monolith \
+    -std=c++11
 endef
 
 # build with v8 & run
 define test
-	@echo ""
-	@echo -e "$(BEGIN_HL) TEST $(END_HL) src/test/hello-world.cc"
-	@echo "$(YELLOW)-------------------------------------$(RESET)"
-	@$(call build, $(1), $(2))
-	@$(2)
+  @echo ""
+  @echo -e "$(BEGIN_HL) TEST $(END_HL) src/test/hello-world.cc"
+  @echo "$(YELLOW)-------------------------------------$(RESET)"
+  @$(call build, $(1), $(2))
+  @$(2)
 endef
 
 .DEFAULT_GOAL := run
