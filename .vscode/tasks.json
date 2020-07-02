@@ -1,0 +1,21 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "command": "clang++",
+      "args": [
+          "main.cc",
+          "-o",
+          "out/main",
+          "-I/Users/Vincent/Common/libv8/include",
+          "-L/Users/Vincent/Common/libv8/obj",
+          "-lv8_monolith",
+          "-std=c++11"
+      ],
+      "type": "shell"
+    }
+  ]
+}
