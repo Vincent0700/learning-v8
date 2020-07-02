@@ -22,7 +22,7 @@ PURPLE      := $(shell tput -Txterm setaf 5)
 BLUE        := $(shell tput -Txterm setaf 6)
 WHITE       := $(shell tput -Txterm setaf 7)
 RESET       := $(shell tput -Txterm sgr0)
-BEGIN_HL    := \033[42;30m
+BEGIN_HL    := \033[44;30m
 END_HL      := \033[0m
 
 # install v8 libs
@@ -68,11 +68,9 @@ check: # check & install deps
 		echo -e "\n$(GREEN)Done!$(RESET)"; \
 	fi
 
-test:
-	@$(clean)
-	@$(call test, src/test/hello-world.cc, dist/hello-world)
-
 run:
 	@$(clean)
+	@echo -e "\n$(BEGIN_HL) INFO $(END_HL) build & run src/main.cc"
+	@echo "$(YELLOW)-----------------------------------------$(RESET)"
 	@$(call build, src/main.cc, dist/main)
 	@./dist/main

@@ -72,10 +72,9 @@ Done!
 如果测试代码没有报错，就说明测试环境搭建好了。
 
 ```
-$ make test 
+$ make run 
 
-[TEST] src/test/hello-world.cc
--------------------------------------
+[INFO] build & run src/main.cc
+-----------------------------------------
 Hello, World!
-3 + 4 = 7
 ```
