@@ -1,6 +1,6 @@
 # Learning V8
 
-本仓库的目的是搭建 V8 的学习和测试环境，如有问题请提 [Issue](https://github.com/Vincent0700/learning-v8/issues/new)。
+本仓库的目的是搭建 V8 的学习和测试环境，如搭建有问题请提 [Issue](https://github.com/Vincent0700/learning-v8/issues/new)。
 
 ## 环境
 
@@ -15,6 +15,8 @@ $ git clone https://github.com/Vincent0700/learning-v8.git
 ```
 
 ### 下载依赖
+
+V8 默认使用 8.3-lkgr 版本，后续文档也以这个版本为例。
 
 ```
 $ make check
@@ -78,3 +80,8 @@ $ make run
 -----------------------------------------
 Hello, World!
 ```
+
+## 参考文档
+
+- [V8 中文文档](https://s0v80dev.icopy.site/docs)
+- [ECMA-262 中文文档](https://ecma262.docschina.org/)
