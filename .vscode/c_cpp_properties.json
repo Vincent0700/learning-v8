@@ -4,13 +4,13 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/Users/Vincent/Common/libv8/include"
+                "./src/third-party/v8/8.3-lkgr/include"
             ],
             "defines": [],
             "macFrameworkPath": [],
-            "compilerPath": "/usr/local/bin/gcc-9",
+            "compilerPath": "/usr/bin/clang++",
             "cStandard": "c11",
-            "cppStandard": "gnu++14",
+            "cppStandard": "c++11",
             "intelliSenseMode": "clang-x64"
         }
     ],

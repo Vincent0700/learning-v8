@@ -1,20 +1,22 @@
 # Learning V8
 
+本仓库的目的是搭建 V8 的学习和测试环境，如有问题请提 [Issue](https://github.com/Vincent0700/learning-v8/issues/new)。
+
 ## 环境
 
-仅在 macOS 环境上测试过，如需在别的平台执行，请自行下载 V8 源码编译，方法参考我之前的文章 [V8 编译踩坑](https://vincentstudio.info/2020/05/18/054_V8_compilation/)。编译好后将头文件和静态库放在 `./src/third-party/v8` 目录下，并修改 `Makefile` 相应的变量。
+仅在 macOS 环境上测试过，如需在别的平台执行，请自行下载 V8 源码编译，方法参考我之前的文章[《V8 编译踩坑》](https://vincentstudio.info/2020/05/18/054_V8_compilation/)。编译好后将头文件和静态库放在 `./src/third-party/v8` 目录下，并修改 `Makefile` 相应的变量。
 
 ## 起步
 
 ### Clone
 
-```bash
+```
 $ git clone https://github.com/Vincent0700/learning-v8.git
 ```
 
 ### 下载依赖
 
-```bash
+```
 $ make check
 
 [INFO] Installing Deps.
