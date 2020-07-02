@@ -1,19 +1,19 @@
-SHELL 			:= /bin/bash
+SHELL       := /bin/bash
 
 # custom variables
-PLATFORM 		:= osx
-V8_VERSION 	:= 8.3-lkgr
-REPOS_URL		:= https://github.com/Vincent0700/learning-v8
+PLATFORM    := osx
+V8_VERSION  := 8.3-lkgr
+REPOS_URL   := https://github.com/Vincent0700/learning-v8
 
 # v8 path
-V8_URL			:= $(REPOS_URL)/releases/download/libv8-$(V8_VERSION)-$(PLATFORM)/$(V8_VERSION).tar.gz
-V8_DIR 			:= ./src/third-party/v8
-V8_CUR_DIR	:= $(V8_DIR)/$(V8_VERSION)
-V8_INCLUDE 	:= $(V8_CUR_DIR)/include
-V8_LIBRARY 	:= $(V8_CUR_DIR)/lib/$(PLATFORM)
+V8_URL      := $(REPOS_URL)/releases/download/libv8-$(V8_VERSION)-$(PLATFORM)/$(V8_VERSION).tar.gz
+V8_DIR      := ./src/third-party/v8
+V8_CUR_DIR  := $(V8_DIR)/$(V8_VERSION)
+V8_INCLUDE  := $(V8_CUR_DIR)/include
+V8_LIBRARY  := $(V8_CUR_DIR)/lib/$(PLATFORM)
 
 # define standard colors
-BLACK       := $(shell tput -Txterm setaf 0)
+BLACK.      := $(shell tput -Txterm setaf 0)
 RED         := $(shell tput -Txterm setaf 1)
 GREEN       := $(shell tput -Txterm setaf 2)
 YELLOW      := $(shell tput -Txterm setaf 3)
