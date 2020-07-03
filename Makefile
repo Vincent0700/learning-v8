@@ -43,12 +43,12 @@ define build
 endef
 
 # build with v8 & run
-define test
+define build_run
   @echo ""
-  @echo -e "$(BEGIN_HL) TEST $(END_HL) src/test/hello-world.cc"
-  @echo "$(YELLOW)-------------------------------------$(RESET)"
-  @$(call build, $(1), $(2))
-  @$(2)
+  @echo -e "$(BEGIN_HL) INFO $(END_HL) Run: src/$(1).cc"
+  @echo "$(YELLOW)----------------------------------------$(RESET)"
+  @$(call build, src/$(1).cc, dist/$(1))
+  @./dist/$(1)
 endef
 
 .DEFAULT_GOAL := run
@@ -70,12 +70,9 @@ check: # check & install deps
 	fi
 
 s1_value:
-	@$(call build, src/s1_value.cc, dist/s1_value)
-	@./dist/s1_value
+	@make clean
+	@$(call build_run,s1_value)
 
 run:
 	@make clean
-	@echo -e "\n$(BEGIN_HL) INFO $(END_HL) build & run src/main.cc"
-	@echo "$(YELLOW)-----------------------------------------$(RESET)"
-	@$(call build, src/main.cc, dist/main)
-	@./dist/main
+	@$(call build_run,main)
