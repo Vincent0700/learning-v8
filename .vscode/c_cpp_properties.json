@@ -4,6 +4,7 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
+                "./src/include",
                 "./src/third-party/v8/8.3-lkgr/include"
             ],
             "defines": [],

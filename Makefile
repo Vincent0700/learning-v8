@@ -37,6 +37,7 @@ endef
 define build
   clang++ $(1) -o $(2) \
     -I$(V8_INCLUDE) \
+		-I./src/include \
     -L$(V8_LIBRARY) -lv8_monolith \
     -std=c++11
 endef
@@ -67,6 +68,10 @@ check: # check & install deps
 		rm -rf $(V8_VERSION).tar.gz; \
 		echo -e "\n$(GREEN)Done!$(RESET)"; \
 	fi
+
+s1_value:
+	@$(call build, src/s1_value.cc, dist/s1_value)
+	@./dist/s1_value
 
 run:
 	@make clean

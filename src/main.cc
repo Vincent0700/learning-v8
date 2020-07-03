@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "libplatform/libplatform.h"
 #include "v8.h"
+#include "libplatform/libplatform.h"
 
 int main(int argc, char* argv[]) {
   // 初始化 V8
